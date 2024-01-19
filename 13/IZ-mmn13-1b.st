@@ -147,6 +147,30 @@ Object subclass: #Terminatorz
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'IZ-mmn13-1b'!
+!Terminatorz commentStamp: 'IZ 1/13/2024 12:49' prior: 0!
+A Terminator is a numb Object, meant to help with end condition.
+
+Instance Variables
+!
+!Terminatorz methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
+canAttack: testRow x: testColumn
+	"Return if the given Queenz can attack, defaults to false"
+	^ false! !
+
+!Terminatorz methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
+firstSolution
+	"defaults to true because of the numb Queenz"
+	^ true! !
+
+!Terminatorz methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
+nextSolution
+	"default to false because of numb Queenz"
+	^ false! !
+
+!Terminatorz methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
+result
+	"return  collection of results"
+	^ OrderedCollection new! !
 
 
 Terminatorz subclass: #QueenzTerminator
@@ -160,23 +184,13 @@ A QueenzTerminator is a numb Queenz, meant to help with end condition.
 Instance Variables
 !
 
+Terminatorz subclass: #RookKnightTerminator
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'IZ-mmn13-1b'!
+!RookKnightTerminator commentStamp: 'IZ 1/13/2024 12:49' prior: 0!
+A RookKnightTerminator is a numb RookKnight, meant to help with end condition.
 
-!QueenzTerminator methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
-canAttack: testRow x: testColumn
-	"Return if the given Queenz can attack, defaults to false"
-	^ false! !
-
-!QueenzTerminator methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
-firstSolution
-	"defaults to true because of the numb Queenz"
-	^ true! !
-
-!QueenzTerminator methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
-nextSolution
-	"default to false because of numb Queenz"
-	^ false! !
-
-!QueenzTerminator methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:48'!
-result
-	"return  collection of results"
-	^ OrderedCollection new! !
+Instance Variables
+!

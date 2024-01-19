@@ -1,9 +1,33 @@
 ﻿Object subclass: #Boardz
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'IZ-mmn13-1b'!
+!Boardz commentStamp: 'IZ 1/19/2024 13:43' prior: 0!
+A Boardz is an abstratction of the chess Boardz.
+
+Instance Variables
+!
+
+
+!Boardz methodsFor: 'getting' stamp: 'IZ 1/19/2024 13:44'!
+solve
+	"Solve the 8 X problem on the board"
+	self subclassResponsibility.! !
+
+
+!Boardz methodsFor: 'initialize-release' stamp: 'IZ 1/19/2024 13:42'!
+initialize
+	"Intialize a board with 8 of objects"
+	 self subclassResponsibility.! !
+
+
+Boardz subclass: #BoardQueen
 	instanceVariableNames: 'lastQueenz'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'IZ-mmn13-1b'!
-!Boardz commentStamp: 'IZ 1/13/2024 12:49' prior: 0!
+!BoardQueen commentStamp: 'IZ 1/19/2024 13:43' prior: 0!
 A Boardz is an abstratction of the chess Boardz.
 
 Instance Variables
@@ -11,10 +35,10 @@ Instance Variables
 
 lastQueenz
 	- the last one standing
-!
+!!!
 
 
-!Boardz methodsFor: 'getting' stamp: 'IZ 1/13/2024 13:38'!
+!BoardQueen methodsFor: 'getting' stamp: 'IZ 1/19/2024 13:43'!
 solve
 	"solves current Boardz"
 	| counter |
@@ -32,7 +56,7 @@ solve
 	]! !
 
 
-!Boardz methodsFor: 'initialize-release' stamp: 'IZ 1/13/2024 12:47'!
+!BoardQueen methodsFor: 'initialize-release' stamp: 'IZ 1/19/2024 13:42'!
 initialize
 	"Init an empty Boardz"
 	lastQueenz := QueenzTerminator new.
@@ -118,7 +142,14 @@ setColumn: aColumn neighbor: aQueenz
 	neighbor := aQueenz! !
 
 
-Object subclass: #QueenzTerminator
+Object subclass: #Terminatorz
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'IZ-mmn13-1b'!
+
+
+Terminatorz subclass: #QueenzTerminator
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

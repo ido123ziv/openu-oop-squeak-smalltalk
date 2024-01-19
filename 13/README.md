@@ -8,16 +8,33 @@ board solve
 ```
 output:
 ```console
-an OrderedCollection(7 2 4 1 8 5 3 6)
-an OrderedCollection(7 2 6 3 1 4 8 5)
-an OrderedCollection(7 3 1 6 8 5 2 4)
-an OrderedCollection(7 3 8 2 5 1 6 4)
-an OrderedCollection(7 4 2 5 8 1 3 6)
-an OrderedCollection(7 4 2 8 6 1 3 5)
-an OrderedCollection(7 5 3 1 6 8 2 4)
-an OrderedCollection(8 2 4 1 7 5 3 6)
-an OrderedCollection(8 2 5 3 1 7 4 6)
-an OrderedCollection(8 3 1 6 2 5 7 4)
-an OrderedCollection(8 4 1 3 6 2 7 5)
+Sol #: 1 is: an OrderedCollection(1 5 8 6 3 7 2 4)
+.
+.
+.
+Sol #: 91 is: an OrderedCollection(8 4 1 3 6 2 7 5)
 End of Solutions.
+Number of Solutions:92
+```
+
+## 1 b
+run:
+```smalltalk
+boardq := BoardQueen new initialize.
+boardq solve
+boardRK := BoardRookKnight new initialize.
+boardRK solve
+```
+output:
+```console
+Sol #: 2758 is: an OrderedCollection(8 7 6 3 4 1 2 5)
+Sol #: 2759 is: an OrderedCollection(8 7 6 3 4 5 1 2)
+Sol #: 2760 is: an OrderedCollection(8 7 6 3 4 5 2 1)
+Sol #: 2761 is: an OrderedCollection(8 7 6 5 1 2 3 4)
+Sol #: 2762 is: an OrderedCollection(8 7 6 5 2 1 4 3)
+Sol #: 2763 is: an OrderedCollection(8 7 6 5 2 3 4 1)
+Sol #: 2764 is: an OrderedCollection(8 7 6 5 4 1 2 3)
+Sol #: 2765 is: an OrderedCollection(8 7 6 5 4 3 2 1)
+End of Solutions.
+Number of Solutions:2766
 ```

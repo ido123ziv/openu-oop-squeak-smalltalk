@@ -34,7 +34,7 @@ lastQueenz
 	" checks if piece can attack"
 		self subclassResponsibility.
 
-! !!ChessPiece methodsFor: 'getting' stamp: 'IZ 1/19/2024 14:04'!firstSolution	"finds the first solution occurns of the problem by asking all neighbors to move accordingly"	neighbor firstSolution.	row := 1.	^ self moveToNextNonAttackedRow! !!ChessPiece methodsFor: 'getting' stamp: 'IZ 1/19/2024 14:05'!nextSolution	"finds another solution by advancing a row"	^ self advance	and: [self moveToNextNonAttackedRow]! !ChessPiece subclass: #Queenz	instanceVariableNames: ''	classVariableNames: ''	poolDictionaries: ''	category: 'IZ-mmn13-1b'!!Queenz commentStamp: 'IZ 1/19/2024 14:15' prior: 0!A Queenz is a representation of a Pieces of chess.
+! !!ChessPiece methodsFor: 'getting' stamp: 'IZ 1/19/2024 14:04'!firstSolution	"finds the first solution occurns of the problem by asking all neighbors to move accordingly"	neighbor firstSolution.	row := 1.	^ self moveToNextNonAttackedRow! !!ChessPiece methodsFor: 'getting' stamp: 'IZ 1/19/2024 14:05'!nextSolution	"finds another solution by advancing a row"	^ self advance	and: [self moveToNextNonAttackedRow]! !!ChessPiece methodsFor: 'getting' stamp: 'IZ 1/19/2024 14:18'!result	"Add row to the list"	^ neighbor result addLast: row; yourself! !ChessPiece subclass: #Queenz	instanceVariableNames: ''	classVariableNames: ''	poolDictionaries: ''	category: 'IZ-mmn13-1b'!!Queenz commentStamp: 'IZ 1/19/2024 14:15' prior: 0!A Queenz is a representation of a Pieces of chess.
 
 Instance Variables
 	column:		Int

@@ -9,7 +9,6 @@ A Boardz is an abstratction of the chess Boardz.
 Instance Variables
 !
 
-
 !Boardz methodsFor: 'getting' stamp: 'IZ 1/19/2024 13:44'!
 solve
 	"Solve the 8 X problem on the board"
@@ -63,6 +62,47 @@ initialize
 	(1 to: 8) do: [:i | lastQueenz := Queenz new
 	setColumn: i neighbor: lastQueenz]! !
 
+Boardz subclass: #BoardRookKnight
+	instanceVariableNames: 'lastRookKnight'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'IZ-mmn13-1b'!
+!BoardRookKnight commentStamp: 'IZ 1/19/2024 13:43' prior: 0!
+A BoardRookKnight is an abstratction of the chess BoardRookKnight.
+
+Instance Variables
+	lastRookKnight:		RookKnight
+
+lastRookKnight
+	- the last one standing
+!!!
+
+
+!BoardRookKnight methodsFor: 'getting' stamp: 'IZ 1/19/2024 13:43'!
+solve
+	"solves current Boardz"
+	| counter |
+	counter := 1.
+	Transcript clear.
+	lastRookKnight firstSolution
+	ifTrue: [Transcript show: ('Sol #: ', counter, ' is: ',lastRookKnight result printString); cr.
+		[lastRookKnight nextSolution]
+	whileTrue: [
+		Transcript show: ('Sol #: ', counter, ' is: ', (lastRookKnight result printString));  cr.
+		counter := counter +1].
+	Transcript show:'End of Solutions.'; cr.
+	Transcript show:('Number of Solutions:', counter asString); cr.]
+	ifFalse: [Transcript show:'No Solution.'; cr
+	]! !
+
+
+!BoardRookKnight methodsFor: 'initialize-release' stamp: 'IZ 1/19/2024 13:42'!
+initialize
+	"Init an empty Boardz"
+	lastRookKnight := RookKnightTerminator new.
+	(1 to: 8) do: [:i | lastRookKnight := RookKnight new
+	setColumn: i neighbor: lastRookKnight]! !
+
 
 Object subclass: #ChessPiece
 	instanceVariableNames: 'row column neighbor'
@@ -90,14 +130,15 @@ row
 
 !ChessPiece methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:51'!
 canAttack: testRow x: testColumn
-	self subclassResponsibility.
+	" checks if piece can attack"
+		self subclassResponsibility.
 
 !ChessPiece methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:52'!
 firstSolution
 	"finds the first solution occurns of the problem by asking all neighbors to move accordingly"
 	neighbor firstSolution.
 	row := 1.
-	^ self moveToNextNonAttackedRow! !
+	^ self moveToNextNonAttackedRow
 
 !ChessPiece methodsFor: 'getting' stamp: 'IZ 1/13/2024 12:52'!
 nextSolution

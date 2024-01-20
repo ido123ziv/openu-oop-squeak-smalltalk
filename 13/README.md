@@ -59,22 +59,28 @@ run:
 b := #(1 2 3 4 5 2 6 7 5 2 4 1)
 c := #(1 2 3 2 6 7 5 2 4 1)
 d := #(1 2 2 6 7 5 2 4 1)
+Transcript show: ('b: ', b printString );cr.
 Transcript show: ('b beforeAndAfter expected: #(1 3 5 6 5 4)  ' printString );cr.
 Transcript show: ('b beforeAndAfter:2 is:  ', (b beforeAndAfter:2 ) printString );cr.
 
+Transcript show: ('c: ', c printString );cr.
 Transcript show: ('c beforeAndAfter expected: #(1 3 6 5 4)  ' printString );cr.
 Transcript show: ('c beforeAndAfter:2 is: ' , (c beforeAndAfter:2 )printString );cr.
 
+Transcript show: ('d: ', d printString );cr.
 Transcript show: ('d beforeAndAfter expected: 	#(1 2 2 6 5 4)  ' printString );cr.
 Transcript show: ('d beforeAndAfter:2 is:  ', (d beforeAndAfter:2 ) printString );cr.
 ```
 
 output:
 ```console
+b: #(1 2 3 4 5 2 6 7 5 2 4 1)
 'b beforeAndAfter expected: #(1 3 5 6 5 4)  '
 b beforeAndAfter:2 is:  #(1 3 5 6 5 4)
+c: #(1 2 3 2 6 7 5 2 4 1)
 'c beforeAndAfter expected: #(1 3 6 5 4)  '
-c beforeAndAfter:2 is: #(1 3 3 6 5 4)
-'d beforeAndAfter expected: #(1 2 2 6 5 4)  '
+c beforeAndAfter:2 is: #(1 3 6 5 4)
+d: #(1 2 2 6 7 5 2 4 1)
+'d beforeAndAfter expected: 	#(1 2 2 6 5 4)  '
 d beforeAndAfter:2 is:  #(1 2 2 6 5 4)
 ```

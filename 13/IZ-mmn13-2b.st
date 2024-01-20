@@ -5,7 +5,7 @@ beforeAndAfter: anObject
 	occurrencesCount := (self occurrencesInOf: anObject).
 	Transcript show: ('occurrencesCount: ', occurrencesCount printString);cr.
 	copyInd := 1.
-	newCopy := self species new: (occurrencesCount +1).
+	newCopy := self species new: (occurrencesCount *2).
 	firstIndex := self indexOf: anObject.
 	Transcript show: ('firstIndex: ', firstIndex,' array: ', self printString );cr.
 	((firstIndex -1 ) > 0)
@@ -17,7 +17,6 @@ beforeAndAfter: anObject
 	ifTrue:[newCopy at: copyInd put: (self at: (firstIndex +1)).
 		copyInd := copyInd  +1.
 		Transcript show: (' newCopy: ', newCopy, ' copyInd: ', copyInd printString );cr.].
-	
 (firstIndex + 1) to: (self size) do: [
 		:index| ((self at: index) = anObject)
 		ifTrue: [

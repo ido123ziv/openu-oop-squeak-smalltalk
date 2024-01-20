@@ -15,7 +15,7 @@ beforeAndAfter: anObject
 		:index|	
 			((self at: index) = anObject)		
 		ifTrue: [
-			(((index -1 ) > 0) and: ((index-1) > lastIndex))
+			(((index -1 ) > 0) and: ((index-1) ~= lastIndex))
 			ifTrue: [
 				newCopy at: copyInd put: (self at: (index -1)).
 				copyInd := copyInd  +1.	
